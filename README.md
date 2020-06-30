@@ -1,6 +1,15 @@
-# Parte 1
+# Tarea 3 
+## Kaseng Fong 
+## B42609
 
-probando tarea
+
+
+# Parte 1. Mejor curva de ajuste para las funciones de densidades marginales X y Y.
+
+
+
+
+
 
 # Parte 2 
 
@@ -13,6 +22,15 @@ y = np.linspace(5,25,21)
 fy= np.sum(xy,axis=0)
 fx= np.sum(xy,axis=1)
 
+#Curva de mejor ajuste. 
+def gaussiana(x,mu,sigma):
+    return 1/(np.sqrt(2*np.pi*sigma**2))*np.exp(-(x-mu)**2/(2*sigma**2))
+
+param_x,_=curve_fit(gaussiana,x,fx)
+param_y,_=curve_fit(gaussiana,y,fy)
+
+print(param_x)
+print(param_y)
 ```
 
 
@@ -20,10 +38,11 @@ fx= np.sum(xy,axis=1)
 
 # Parte 3
 
-imagenes 
 
-![image de morodr](mordor.png)
+
 
 
 
 # Parte 4
+
+![image de morodr](mordor.png)
