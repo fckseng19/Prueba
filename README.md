@@ -20,5 +20,10 @@ fx= np.sum(xy,axis=1)
 
 # Parte 3
 
+imagenes 
+
+![image de morodr](mordor.png)
+
+
 
 # Parte 4
