@@ -7,7 +7,13 @@
 
 # Parte 1. Mejor curva de ajuste para las funciones de densidades marginales X y Y.
 
-Para obtener la mejor curva de ajuste para las funciones de las densidades marginales, a partir de los datos, se extrae los vectores mediante np.linspace los valores de las filas de X y las columnas de Y. Se extraen los promedios para la densidad marginal de X y Y  utilizando  
+Para obtener la mejor curva de ajuste para las funciones de las densidades marginales, a partir de los datos, se extrae los vectores mediante np.linspace los valores de las filas de X y las columnas de Y. Se extraen la sumatoria de cada columna y fila para la densidad marginal de X y Y  utilizando np.sum(), con estos datos se obtienen las graficas reales de las densidades marginales de Fx y Fy que se encuentran en la parte 4  del archivo. Seguidamente se procede a realizar el ajuste, donde se observa que el comportamiento de las graficas reales obtenidas representan una curva gaussiana, por lo que se define una funcion para obtener los parametros de "sigma" y "mu" donde se obtienen los siguientes parametros:
+
+|        | X       | Y       |
+|--------|---------|---------|
+| \sigma | 3.2994  |  6.0269 |
+| \mu    | 9.90484 | 15.0794 |
+
 
 ``` python
 xy = pd.read_csv("xy.csv",header = 0,index_col=0)
@@ -17,8 +23,6 @@ y = np.linspace(5,25,21)
 
 fy= np.sum(xy,axis=0)
 fx= np.sum(xy,axis=1)
-
-print(fx)
 
 #Curva de mejor ajuste. 
 def gaussiana(x,mu,sigma):
@@ -33,6 +37,7 @@ print(param_y)
 
 # Parte 2 
 
+ !Ecuacion is $$y = x^2$$
 
 
 # Parte 3  
@@ -79,9 +84,11 @@ print( "El coeficiente de covarianza es :" ,ccv)
 
 
 ```
-
+$$y = x^2$$
 
 # Parte 4
+
+## Curvas de las funciones de densidades marginales obtenidas de la parte 1. 
 
 
 1. Curva de densidad marginal x
